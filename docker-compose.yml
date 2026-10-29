@@ -24,8 +24,8 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/airflow/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/airflow/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/airflow/plugins:/opt/airflow/plugins
-    - ${AIRFLOW_PROJ_DIR:-.}/football_dbt:/opt/dbt/football_dbt
-    - ${AIRFLOW_PROJ_DIR:-.}/football_dbt/profiles:/opt/dbt/profiles
+    - ${AIRFLOW_PROJ_DIR:-.}/med_dbt:/opt/dbt/med_dbt
+    - ${AIRFLOW_PROJ_DIR:-.}/med_dbt/profiles:/opt/dbt/profiles
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on

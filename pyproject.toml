@@ -4,7 +4,12 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "boto3>=1.43.121",
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.16.2",
+    "sqlalchemy>=2.1.6",
+]
 
 [tool.uv.build-backend]
 module-name = "medicare_app"

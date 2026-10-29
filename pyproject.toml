@@ -1,0 +1,17 @@
+[project]
+name = "medicare"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.build-backend]
+module-name = "medicare_app"
+
+[project.scripts]
+medicare = "medicare_app:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14"]
+build-backend = "uv_build"

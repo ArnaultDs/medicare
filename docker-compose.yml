@@ -1,7 +1,9 @@
 x-airflow-common: 
   &airflow-common
 
-  build: .
+  build: 
+    context: .
+    dockerfile: docker/airflow/Dockerfile
   env_file:
     - .env
   environment: 
@@ -137,6 +139,12 @@ services:
       - ${AIRFLOW_PROJ_DIR:-.}/airflow/config:/opt/airflow/config
       - ${AIRFLOW_PROJ_DIR:-.}/airflow/plugins:/opt/airflow/plugins
       - ./scripts/docker_init/shell/airflow_init.sh:/airflow_init.sh:ro
+
+  synthea:
+    build:
+      context: docker/synthea        # ou: context: . + dockerfile: Dockerfile.synthea
+    image: synthea:local
+    profiles: ["tools"]
 
 volumes:
   postgresql_data:
